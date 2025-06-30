@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reddem Ganesh Reddy - Portfolio</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500;600&family=Orbitron:wght@400;700;900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Inter:wght@300;400;500;600&family=Orbitron:wght@400;700;900&display=swap"></noscript>
+    
+    <!-- Preload Font Awesome -->
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* Enhanced Profile Image Styles with Advanced Animations */
+        .profile-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 3rem;
+            perspective: 1200px;
+            position: relative;
+        }
+        
+        .profile-wrapper {
+            position: relative;
+            width: 320px;
+            height: 320px;
+            background: linear-gradient(45deg, #00FFFF, #FF00FF, #00FF00, #FFFF00, #FF4500, #9400D3);
+            background-size: 600% 600%;
+            animation: morphing-gradient 12s ease infinite, float-complex 8s ease-in-out infinite, shape-morph 15s ease-in-out infinite;
+            padding: 5px;
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            box-shadow: 0 25px 80px rgba(0, 255, 255, 0.4), 
+                        0 0 120px rgba(255, 0, 255, 0.3),
+                        0 0 200px rgba(0, 255, 0, 0.2),
+                        inset 0 0 30px rgba(255, 255, 255, 0.15);
+            transform-style: preserve-3d;
+        }
+        
+        .profile-wrapper::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, #00FFFF, #FF00FF, #00FF00, #FFFF00, #FF4500, #9400D3);
+            background-size: 600% 600%;
+            border-radius: 65% 35% 25% 75% / 55% 35% 65% 45%;
+            animation: morphing-gradient 10s ease infinite reverse, outer-morph 18s ease-in-out infinite;
+            z-index: -1;
+            opacity: 0.3;
+            filter: blur(5px);
+        }
+        
+        .profile-wrapper:hover {
+            animation-play-state: paused;
+            transform: scale(1.1) rotateY(15deg) rotateX(5deg);
+            box-shadow: 0 40px 120px rgba(0, 255, 255, 0.6), 
+                        0 0 180px rgba(255, 0, 255, 0.5),
+                        0 0 300px rgba(0, 255, 0, 0.3),
+                        inset 0 0 50px rgba(255, 255, 255, 0.25);
+        }
+        
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            background: radial-gradient(circle at 30% 30%, #1a1a1a, #0a0a0a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4.5rem;
+            font-weight: 900;
+            color: #00FFFF;
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.8), 0 0 60px rgba(0, 255, 255, 0.4);
+            position: relative;
+            overflow: hidden;
+            animation: text-glow 3s ease-in-out infinite alternate;
+        }
+        
+        .profile-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shimmer 2s infinite;
+        }
+        
+        .profile-image:hover {
+            border-radius: 70% 30% 60% 40% / 55% 45% 35% 65%;
+            color: #FF00FF;
+            text-shadow: 0 0 40px rgba(255, 0, 255, 0.8), 0 0 80px rgba(255, 0, 255, 0.4);
+            transform: rotateZ(5deg);
+        }
+        
+        /* Advanced Keyframe Animations */
+        @keyframes morphing-gradient {
+            0%, 100% { 
+                background-position: 0% 50%;
+                filter: hue-rotate(0deg);
+            }
+            25% { 
+                background-position: 100% 50%;
+                filter: hue-rotate(90deg);
+            }
+            50% { 
+                background-position: 50% 100%;
+                filter: hue-rotate(180deg);
+            }
+            75% { 
+                background-position: 50% 0%;
+                filter: hue-rotate(270deg);
+            }
+        }
+        
+        @keyframes float-complex {
+            0%, 100% { 
+                transform: translateY(0px) translateX(0px) rotate(0deg);
+            }
+            25% { 
+                transform: translateY(-15px) translateX(10px) rotate(2deg);
+            }
+            50% { 
+                transform: translateY(-25px) translateX(0px) rotate(0deg);
+            }
+            75% { 
+                transform: translateY(-15px) translateX(-10px) rotate(-2deg);
+            }
+        }
+        
+        @keyframes shape-morph {
+            0%, 100% { 
+                border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+            }
+            20% { 
+                border-radius: 30% 70% 70% 30% / 30% 60% 40% 70%;
+            }
+            40% { 
+                border-radius: 70% 30% 50% 50% / 70% 70% 30% 30%;
+            }
+            60% { 
+                border-radius: 50% 50% 30% 70% / 40% 80% 20% 60%;
+            }
+            80% { 
+                border-radius: 40% 60% 60% 40% / 80% 20% 60% 40%;
+            }
+        }
+        
+        @keyframes outer-morph {
+            0%, 100% { 
+                border-radius: 65% 35% 25% 75% / 55% 35% 65% 45%;
+            }
+            33% { 
+                border-radius: 25% 75% 75% 25% / 35% 65% 35% 65%;
+            }
+            66% { 
+                border-radius: 75% 25% 45% 55% / 75% 75% 25% 25%;
+            }
+        }
+        
+        @keyframes text-glow {
+            0% { 
+                text-shadow: 0 0 30px rgba(0, 255, 255, 0.8), 0 0 60px rgba(0, 255, 255, 0.4);
+            }
+            100% { 
+                text-shadow: 0 0 40px rgba(0, 255, 255, 1), 0 0 80px rgba(0, 255, 255, 0.6), 0 0 120px rgba(0, 255, 255, 0.3);
+            }
+        }
+        
+        @keyframes shimmer {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        /* Critical above-the-fold styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #0A0A0A;
+            color: #F0F0F0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .hero-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(135deg, #0A0A0A 0%, #1a1a2e 50%, #16213e 100%);
+        }
+        #loading-spinner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #0A0A0A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(0, 255, 255, 0.3);
+            border-top: 3px solid #00FFFF;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* RGR Logo Styles */
+        .nav-logo .logo-text {
+            font-family: 'Orbitron', monospace;
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #00FFFF, #FF00FF, #00FF00, #FFFF00);
+            background-size: 300% 300%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            position: relative;
+            display: inline-block;
+            animation: gradient-shift 3s ease-in-out infinite, glow-pulse 2s ease-in-out infinite;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+        }
+        
+        .nav-logo .logo-text:hover {
+            transform: scale(1.1) rotate(2deg);
+            filter: brightness(1.3);
+        }
+        
+        .nav-logo .logo-text::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: linear-gradient(45deg, #00FFFF, #FF00FF, #00FF00, #FFFF00);
+            background-size: 300% 300%;
+            border-radius: 8px;
+            z-index: -1;
+            animation: gradient-shift 3s ease-in-out infinite;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .nav-logo .logo-text:hover::before {
+            opacity: 0.3;
+        }
+        
+        @keyframes gradient-shift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        @keyframes glow-pulse {
+            0%, 100% { 
+                text-shadow: 0 0 30px rgba(0, 255, 255, 0.5), 0 0 60px rgba(0, 255, 255, 0.3);
+            }
+            50% { 
+                text-shadow: 0 0 40px rgba(0, 255, 255, 0.8), 0 0 80px rgba(0, 255, 255, 0.5);
+            }
+        }
+        
+        /* Thank You Message Styles */
+        .thank-you-section {
+            background: linear-gradient(135deg, #0A0A0A 0%, #1a1a2e 50%, #16213e 100%);
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 2px solid rgba(0, 255, 255, 0.3);
+        }
+        
+        .thank-you-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .thank-you-title {
+            font-size: 3rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #00FFFF, #FF00FF, #00FF00, #FFFF00);
+            background-size: 300% 300%;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-shift 3s ease-in-out infinite;
+            margin-bottom: 1.5rem;
+        }
+        
+        .thank-you-message {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+        
+        .thank-you-icon {
+            font-size: 2rem;
+            color: #00FFFF;
+            animation: glow-pulse 2s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="cosmic-theme">
+    <!-- Loading Spinner -->
+    <div id="loading-spinner">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Theme Selector -->
+    <div class="theme-selector">
+        <button class="theme-btn active" data-theme="cosmic">
+            <i class="fas fa-star"></i>
+            <span>Cosmic</span>
+        </button>
+        <button class="theme-btn" data-theme="aurora">
+            <i class="fas fa-water"></i>
+            <span>Aurora</span>
+        </button>
+        <button class="theme-btn" data-theme="ocean">
+            <i class="fas fa-wave-square"></i>
+            <span>Ocean</span>
+        </button>
+        <button class="theme-btn" data-theme="sunset">
+            <i class="fas fa-sun"></i>
+            <span>Sunset</span>
+        </button>
+        <button class="theme-btn" data-theme="forest">
+            <i class="fas fa-tree"></i>
+            <span>Forest</span>
+        </button>
+    </div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar glass" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="#home" class="logo-text">RGR</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#skills" class="nav-link">Skills</a></li>
+                <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-content">
+            <div class="hero-image animate-float">
+                <div class="profile-container">
+                    <div class="profile-wrapper">
+                        <div class="profile-image">RGR</div>
+                    </div>
+                </div>
+                <div class="image-glow"></div>
+            </div>
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span id="typewriter-text" class="animate-pulse-slow"></span>
+                    <span id="cursor" class="cursor-blink">|</span>
+                </h1>
+                <p id="hero-subtitle" class="hero-subtitle">Passionate about creating innovative solutions through code and data</p>
+                <div class="hero-buttons" id="hero-buttons">
+                    <a href="#projects" class="btn btn-primary hover-lift interactive-scale">
+                        <i class="fas fa-rocket"></i>
+                        View Projects
+                    </a>
+                    <a href="assets/resume.pdf" class="btn btn-secondary hover-lift interactive-scale" download>
+                        <i class="fas fa-download"></i>
+                        Download Resume
+                    </a>
+                    <a href="#contact" class="btn btn-outline hover-lift interactive-scale">
+                        <i class="fas fa-envelope"></i>
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator animate-bounce-slow">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about-section" id="about">
+        <div class="container">
+            <h2 class="section-title text-glow">About Me</h2>
+            <div class="about-content">
+                <div class="about-text glass-strong">
+                    <div class="text-content">
+                        <p>Hello! I'm Reddem Ganesh Reddy, an aspiring software engineer from Andhra Pradesh, India. Currently pursuing B.Tech in Computer Science and Engineering, I'm passionate about leveraging technology to solve real-world problems.</p>
+                        <p>With expertise in Java, Python, and various web technologies, I enjoy building applications that make a difference. My interests span across AI/ML, full-stack development, and data science. I'm a quick learner who thrives on challenges and continuous growth.</p>
+                        <p>When I'm not coding, you'll find me reading books, listening to music, or exploring the latest tech trends. I believe in the power of collaboration and always strive to contribute meaningfully to every project I work on.</p>
+                    </div>
+                </div>
+                <div class="about-traits">
+                    <div class="trait glass hover-lift">
+                        <i class="fas fa-lightbulb animate-glow-pulse"></i>
+                        <h4>Quick Learner</h4>
+                        <p>Rapidly adapting to new technologies and frameworks</p>
+                    </div>
+                    <div class="trait glass hover-lift">
+                        <i class="fas fa-shield-alt animate-glow-pulse"></i>
+                        <h4>Independent</h4>
+                        <p>Self-motivated and capable of working autonomously</p>
+                    </div>
+                    <div class="trait glass hover-lift">
+                        <i class="fas fa-book animate-glow-pulse"></i>
+                        <h4>Book Lover</h4>
+                        <p>Constantly learning through reading and research</p>
+                    </div>
+                    <div class="trait glass hover-lift">
+                        <i class="fas fa-music animate-glow-pulse"></i>
+                        <h4>Music Enthusiast</h4>
+                        <p>Finding inspiration and creativity through music</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills-section" id="skills">
+        <div class="container">
+            <h2 class="section-title text-glow">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-category glass">
+                    <h3 class="category-title">
+                        <i class="fas fa-code animate-spin-slow"></i> 
+                        Programming Languages
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fab fa-java"></i>
+                            <span>Java</span>
+                        </div>
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fas fa-plus"></i>
+                            <span>C++</span>
+                        </div>
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fas fa-hashtag"></i>
+                            <span>C#</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category glass">
+                    <h3 class="category-title">
+                        <i class="fas fa-robot animate-spin-slow"></i> 
+                        AI / ML / DS
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fas fa-brain"></i>
+                            <span>Machine Learning</span>
+                        </div>
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fas fa-layer-group"></i>
+                            <span>Deep Learning</span>
+                        </div>
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Scikit-learn</span>
+                        </div>
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>TensorFlow</span>
+                        </div>
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fas fa-calculator"></i>
+                            <span>NumPy</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category glass">
+                    <h3 class="category-title">
+                        <i class="fas fa-chart-bar animate-spin-slow"></i> 
+                        Data Analytics
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fas fa-chart-pie"></i>
+                            <span>Power BI</span>
+                        </div>
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fas fa-file-excel"></i>
+                            <span>Excel</span>
+                        </div>
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fas fa-table"></i>
+                            <span>Pandas</span>
+                        </div>
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fas fa-database"></i>
+                            <span>SQL</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category glass">
+                    <h3 class="category-title">
+                        <i class="fas fa-globe animate-spin-slow"></i> 
+                        Web Development
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fab fa-html5"></i>
+                            <span>HTML</span>
+                        </div>
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fab fa-css3-alt"></i>
+                            <span>CSS</span>
+                        </div>
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fab fa-js"></i>
+                            <span>JavaScript</span>
+                        </div>
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fab fa-php"></i>
+                            <span>PHP</span>
+                        </div>
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fab fa-bootstrap"></i>
+                            <span>Bootstrap</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category glass">
+                    <h3 class="category-title">
+                        <i class="fas fa-mobile-alt animate-spin-slow"></i> 
+                        App Development
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fab fa-android"></i>
+                            <span>Android Studio</span>
+                        </div>
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fab fa-react"></i>
+                            <span>React Native</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="skill-category glass">
+                    <h3 class="category-title">
+                        <i class="fas fa-briefcase animate-spin-slow"></i> 
+                        Business Analysis
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fas fa-clipboard-list"></i>
+                            <span>Requirements</span>
+                        </div>
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fas fa-sitemap"></i>
+                            <span>Process Modeling</span>
+                        </div>
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Reports</span>
+                        </div>
+                        <div class="skill-card hover-lift interactive-scale">
+                            <i class="fas fa-comments"></i>
+                            <span>Communication</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects-section" id="projects">
+        <div class="container">
+            <h2 class="section-title text-glow">Projects & Portfolio</h2>
+            
+            <div class="project-filters">
+                <button class="filter-btn active interactive-scale" data-filter="all">All</button>
+                <button class="filter-btn interactive-scale" data-filter="apps">Apps</button>
+                <button class="filter-btn interactive-scale" data-filter="websites">Websites</button>
+                <button class="filter-btn interactive-scale" data-filter="ml">ML Projects</button>
+            </div>
+            
+            <div class="timeline-container">
+                <div class="timeline-road"></div>
+                
+                <!-- App Projects -->
+                <div class="timeline-item hover-lift" data-category="apps">
+                    <div class="timeline-marker"></div>
+                    <div class="project-card glass">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1556742044-3c52d6e88c62?w=400&h=250&fit=crop" alt="RSR Travels" loading="lazy">
+                            <div class="image-overlay">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4>RSR Travels</h4>
+                            <span class="project-year">2024</span>
+                            <p>A comprehensive travel booking mobile application with real-time bus tracking, seat selection, and payment integration.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Android</span>
+                                <span class="tech-tag">Java</span>
+                                <span class="tech-tag">Firebase</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link interactive-scale">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" target="_blank" class="project-link interactive-scale">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item hover-lift" data-category="apps">
+                    <div class="timeline-marker"></div>
+                    <div class="project-card glass">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop" alt="Food Delivery App" loading="lazy">
+                            <div class="image-overlay">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4>Food Delivery App</h4>
+                            <span class="project-year">2024</span>
+                            <p>Modern food delivery application with restaurant browsing, order tracking, and secure payment gateway integration.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link interactive-scale">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" target="_blank" class="project-link interactive-scale">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Website Projects -->
+                <div class="timeline-item hover-lift" data-category="websites">
+                    <div class="timeline-marker"></div>
+                    <div class="project-card glass">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop" alt="E-Commerce Platform" loading="lazy">
+                            <div class="image-overlay">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4>E-Commerce Platform</h4>
+                            <span class="project-year">2023</span>
+                            <p>Full-stack e-commerce solution with product catalog, shopping cart, user authentication, and admin dashboard.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">PHP</span>
+                                <span class="tech-tag">MySQL</span>
+                                <span class="tech-tag">Bootstrap</span>
+                                <span class="tech-tag">JavaScript</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link interactive-scale">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" target="_blank" class="project-link interactive-scale">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item hover-lift" data-category="websites">
+                    <div class="timeline-marker"></div>
+                    <div class="project-card glass">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=250&fit=crop" alt="School Management System" loading="lazy">
+                            <div class="image-overlay">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4>School Management System</h4>
+                            <span class="project-year">2023</span>
+                            <p>Comprehensive school management web application for student records, attendance tracking, and grade management.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">HTML</span>
+                                <span class="tech-tag">CSS</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">PHP</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link interactive-scale">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" target="_blank" class="project-link interactive-scale">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ML Projects -->
+                <div class="timeline-item hover-lift" data-category="ml">
+                    <div class="timeline-marker"></div>
+                    <div class="project-card glass">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop" alt="Stock Price Predictor" loading="lazy">
+                            <div class="image-overlay">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4>Stock Price Predictor</h4>
+                            <span class="project-year">2024</span>
+                            <p>Machine learning model to predict stock prices using historical data and technical indicators with high accuracy.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">TensorFlow</span>
+                                <span class="tech-tag">Pandas</span>
+                                <span class="tech-tag">NumPy</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link interactive-scale">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" target="_blank" class="project-link interactive-scale">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item hover-lift" data-category="ml">
+                    <div class="timeline-marker"></div>
+                    <div class="project-card glass">
+                        <div class="project-image">
+                            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=250&fit=crop" alt="Image Classification" loading="lazy">
+                            <div class="image-overlay">
+                                <i class="fas fa-external-link-alt"></i>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h4>Image Classification System</h4>
+                            <span class="project-year">2023</span>
+                            <p>Deep learning model for image classification using convolutional neural networks with 95% accuracy on test data.</p>
+                            <div class="tech-stack">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Keras</span>
+                                <span class="tech-tag">OpenCV</span>
+                                <span class="tech-tag">Scikit-learn</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="#" target="_blank" class="project-link interactive-scale">
+                                    <i class="fab fa-github"></i>
+                                </a>
+                                <a href="#" target="_blank" class="project-link interactive-scale">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section education-section" id="education">
+        <div class="container">
+            <h2 class="section-title text-glow">Education</h2>
+            <div class="timeline-container">
+                <div class="timeline-road"></div>
+                
+                <div class="timeline-item hover-lift">
+                    <div class="timeline-marker">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="education-card glass">
+                        <h4>B.Tech in Computer Science & Engineering</h4>
+                        <h5>Siddharth Institute of Engineering & Technology</h5>
+                        <span class="education-year">2022 - 2026</span>
+                        <span class="education-gpa">GPA: 9.5/10</span>
+                        <p>Specialization in Computer Science and Engineering with focus on software development, data structures, algorithms, and machine learning.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item hover-lift">
+                    <div class="timeline-marker">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="education-card glass">
+                        <h4>Intermediate (MPC)</h4>
+                        <h5>Sri Siddhartha Junior College</h5>
+                        <span class="education-year">2020 - 2022</span>
+                        <span class="education-gpa">GPA: 9.5/10</span>
+                        <p>Mathematics, Physics, and Chemistry with strong foundation in analytical thinking and problem-solving.</p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item hover-lift">
+                    <div class="timeline-marker">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="education-card glass">
+                        <h4>Secondary School Certificate</h4>
+                        <h5>Z.P. High School</h5>
+                        <span class="education-year">2019 - 2020</span>
+                        <span class="education-gpa">GPA: 9.5/10</span>
+                        <p>Completed secondary education with excellent academic performance across all subjects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section experience-section" id="experience">
+        <div class="container">
+            <h2 class="section-title text-glow">Experience</h2>
+            <div class="experience-content">
+                <div class="experience-placeholder glass hover-lift">
+                    <i class="fas fa-briefcase animate-glow-pulse"></i>
+                    <h3>Ready for New Opportunities</h3>
+                    <p>Currently seeking internships and entry-level positions in software development, data science, or AI/ML roles. Open to contributing to innovative projects and learning from experienced professionals.</p>
+                    <div class="experience-skills">
+                        <span class="skill-badge interactive-scale">Full Stack Development</span>
+                        <span class="skill-badge interactive-scale">Machine Learning</span>
+                        <span class="skill-badge interactive-scale">Data Analysis</span>
+                        <span class="skill-badge interactive-scale">Mobile App Development</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section contact-section" id="contact">
+        <div class="container">
+            <h2 class="section-title text-glow">Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item glass hover-lift">
+                        <i class="fas fa-envelope animate-glow-pulse"></i>
+                        <div>
+                            <h4>Email</h4>
+                            <p>ganeshreddygani1432@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="contact-item glass hover-lift">
+                        <i class="fas fa-phone animate-glow-pulse"></i>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 9014089184</p>
+                        </div>
+                    </div>
+                    <div class="contact-item glass hover-lift">
+                        <i class="fas fa-map-marker-alt animate-glow-pulse"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>D No: 4-22, Uyyalavaripalle, PTM(M), Annamayya, AP</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" target="_blank" class="social-link interactive-scale">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-link interactive-scale">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-link interactive-scale">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" target="_blank" class="social-link interactive-scale">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <form class="contact-form glass-strong" id="contact-form">
+                    <div class="form-group">
+                        <input type="text" id="name" name="name" placeholder="Your Name" required class="focus-ring">
+                        <div class="error-message" id="name-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Your Email" required class="focus-ring">
+                        <div class="error-message" id="email-error"></div>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="message" placeholder="Your Message" rows="5" required class="focus-ring"></textarea>
+                        <div class="error-message" id="message-error"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary interactive-scale">
+                        <i class="fas fa-paper-plane"></i>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Thank You Section -->
+    <section class="thank-you-section">
+        <div class="thank-you-content">
+            <h2 class="thank-you-title">Thank You for Visiting!</h2>
+            <p class="thank-you-message">
+                I appreciate you taking the time to explore my portfolio. If you'd like to connect, collaborate, 
+                or discuss opportunities, please don't hesitate to reach out. Let's build something amazing together!
+            </p>
+            <div class="thank-you-icon">
+                <i class="fas fa-heart"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer glass">
+        <div class="footer-content">
+            <p>&copy; 2024 Reddem Ganesh Reddy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top interactive-scale">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Project Modal -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content glass-strong">
+            <span class="modal-close interactive-scale">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
